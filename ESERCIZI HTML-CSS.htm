@@ -59,6 +59,183 @@ body {
     text-align: left;
   }
 }
+
+#divcss {
+  margin-top: 10px;
+  padding: 50px;
+  margin: 45px;
+  width: 300px;
+  height: 700px;
+  background-color: #c4c4c4;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #FF781E;
+}
+
+#paddingmargin {
+  margin-top: 10px;
+  padding: 50px;
+  margin: 45px;
+  width: 300px;
+  height: auto;
+  background-color: #c4c4c4;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #FF781E;
+}
+
+#flipcard {
+  margin-top: 10px;
+  padding: 50px;
+  margin: 45px;
+  width: 250px;
+  height: 420px;
+  background-color: #c4c4c4;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #FF781E;
+}
+
+#primapagina {
+  margin-top: 10px;
+  padding: 50px;
+  margin: 45px;
+  width: 300px;
+  height: auto;
+  background-color: #c4c4c4;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #FF781E;
+}
+
+#spazio {
+  display: flex;
+}
+
+#box1 {
+  background-color: #EBF0F2;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #737779;
+  margin-bottom: 10px;
+}
+
+#box2 {
+  background-color: #e27e0b;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #68390d;
+  margin-bottom: 10px;
+}
+
+#box3 {
+  background-color: #00ff62;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #04531c;
+  margin-bottom: 10px;
+}
+
+#box4 {
+  background-color: #ff00c8;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #720872;
+  margin-bottom: 10px;
+}
+
+#box5 {
+  background-color: #e66e6e;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ff0000;
+  margin-bottom: 10px;
+}
+
+#box6 {
+  background-color: #EBF0F2;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #737779;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#box7 {
+  background-color: #e27e0b;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #68390d;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#box8 {
+  background-color: #00ff62;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #04531c;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#box9 {
+  background-color: #ff00c8;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #720872;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#box10 {
+  background-color: #e66e6e;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #ff0000;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  perspective: 1000px;
+  margin-left: 16px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 216px;
+  height: 288px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 216px;
+  height: 288px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+    width: 216px;
+    height: 288px;
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
 </style>
 </head>
 <body>
@@ -73,13 +250,110 @@ body {
   </a>
 </div>
 
-<div style="padding-left:16px">
-        <h2><a href="https://binattimattia.github.io/TPSIT/cssediv.html">DIV E CSS</a></h2>
-        <h2><a href="https://binattimattia.github.io/TPSIT/paddingmargin.html">PADDING E MARGIN</a></h2>
-        <h2><a href="https://binattimattia.github.io/TPSIT/flip%20card.html">FLIP CARD</a></h2>
-        <h2><a href="https://binattimattia.github.io/TPSIT/primapagina.htm">LA MIA PRIMA PAGINA</a></h2>
+<div id="spazio">
+  <div id="divcss">
+    <h1 style="color: #333";>BOX COLORATI CON DIV E CSS</h1>
+    <div id="box1">     <!--div = divido | id = nome del box -->
+    </div>
+    
+    <div id="box2">
+    </div>
+    
+    <div id="box3">
+    </div>
+    
+    <div id="box4">
+    </div>
+
+    <div id="box5">
+    </div>
+  </div>
+  <div id="paddingmargin">
+    <h1 style="color: #333";>BOX COLORATI CON PADDING E MARGIN</h1>
+    <div id="box6">     <!--div = divido | id = nome del box -->
+      <p>Follia è fare sempre la stessa cosa e aspettarsi ogni volta un risultato diverso</p>
+      <p>- Albert Einstein</p>
+  </div>
+
+  <div id="box7">
+      <p>L’importante non è vincere, ma partecipare</p>
+      <p>- Pierre de Coubertin</p>
+  </div>
+
+  <div id="box8">
+      <p>Se non hanno pane, che mangino brioche!</p>
+      <p>- Maria Antonietta d’Asburgo-Lorena</p>
+  </div>
+
+  <div id="box9">
+      <p>Il fine giustifica i mezzi</p>
+      <p>- Niccolò Macchiavelli</p>
+  </div>
+
+  <div id="box10">
+      <p>Eppur si muove!</p>
+      <p>- Galileo</p>
+  </div>
+  </div>
+  <div id="flipcard">
+    <h1 style="color: #333; text-align: center;";>FLIP CARD</h1>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="1727432991741.jpg" alt="Avatar" style="width:216px; height: 288px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Mattia Binatti</h1>
+          <p>IIS JC Maxwell</p>
+          <p>3A INFO</p>
+          <p>PROGRAMMATORE</p>
+          <p><div style="color: white;">FORZA</div> <div style="color: black;">JUVE!</div></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div id="primapagina">
+  <h1>
+    Ciao, questa è la mia prima pagina.    
+    </h1>
+    Sono <u>Mattia Binatti</u> e inizio a studiare l'html.
+    <br>
+    <p style="color: red">
+        <strong>Chi ha inventato questo linguaggio?</strong> 
+        </p>
+    
+    <p>Sir Tim Berners-Lee</p>
+    <p style="color: red;">
+        <strong>Quando è stato inventato?</strong>
+    </p>
+    <p>Nel 1990</p>
+    <p style="color: red;">
+        <strong>Quali sono gli scopi di questo linguaggio?</strong>
+    </p>
+    <p>Gestire i contenuti associandone o specificandone allo stesso tempo la struttura grafica (layout) all'interno della pagina web da realizzare grazie all'utilizzo di tag diversi.</p>
+    <p style="color: red;">
+        <strong>Che cos'è il WEB?</strong>
+    </p>
+    <p>è uno spazio elettronico e digitale di Internet destinato alla pubblicazione di contenuti multimediali</p>
+    <p style="color: red;">
+        <strong>Che problemi risolveva il WEB ?</strong>
+    </p>
+    <p>Risolveva problemi come comunicare da casa, studiare a distanza, fare acquisti online etc...</p>
+    <p style="color: red;">
+        <strong>Che differenza c'è tra web e html ed internet?</strong>
+    </p>
+    <p>1. Internet è la rete. <br>
+        2. Web è uno dei servizi che usano Internet per mostrare pagine. <br>
+        3. HTML è il linguaggio che serve a creare quelle pagine.</p>
+    <p>I miei siti preferiti sono:</p>
+    <ol>
+        <li><a href="https://www.juventus.com/it">Juventus.com</li>
+        <li><a href="https://www.w3schools.com/">W3School.com</li>
+        <li><a href="https://www.amazon.it/">Amazon.it</li>
+    </ol>
+</div>
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
