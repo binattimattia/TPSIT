@@ -129,7 +129,6 @@ body {
   background-color: white;
 }
 
-
 </style>
 </head>
 <body>
@@ -162,7 +161,12 @@ body {
         <input type="text" id="arrivo" style="margin-top: 10px;">
     </div>
 
-    <button id="bottone" onclick="risultati()">CALCOLA</button>
+    <button id="bottone" onclick="risultato()">CALCOLA</button>
+
+    <div id="risultato" style="padding: 10px;">
+
+    </div>
+
 </div>
 
 <script>
@@ -175,14 +179,19 @@ function myFunction() {
   }
 }
 
-function risultati() {
+function risultato() {
     let par = document.getElementById("partenza").value;
-    document.getElementById("altezza_partenza").innerHTML += par
+    document.getElementById("risultato").innerHTML += 
+    "Altezza di partenza = " + par;
     let pau = document.getElementById("pausa").value;
-    document.getElementById("altezza_pausa").innerHTML += pau;
+    document.getElementById("risultato").innerHTML += 
+    "<br>Altezza di pausa = " + pau
     let arr = document.getElementById("arrivo").value;
-    document.getElementById("altezza_arrivo").innerHTML += arr;
-
+    document.getElementById("risultato").innerHTML += 
+    "<br>Altezza di arrivo = " + arr +
+    "<br>Dislivello partenza-pausa : " + (pau - par) +
+    "<br>Dislivello pausa-arrivo : " + (arr - pau) +
+    "<br>Dislivello partenza-arrivo : " + (arr - par);
 }
 
 </script>
