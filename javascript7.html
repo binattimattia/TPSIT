@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Morra Bot</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #FF781E;
+  transition: background-color 0.3s ease;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.topnav a:hover {
+  background-color: #FF781E;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #FF781E;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+  font-size: 28px;
+  color: #f2f2f2;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    display: block;
+    float: right;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    padding: 14px 20px;
+  }
+}
+
+#contenuto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contenuto h1 {
+  color: #333;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+#contenuto p {
+  color: #555;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-align: center;
+}
+
+#contenuto button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #FF781E;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contenuto button:hover {
+  background-color: #e66a1a;
+}
+
+@media screen and (max-width: 400px) {
+  #contenuto {
+    padding: 15px;
+  }
+
+  #contenuto h1 {
+    font-size: 1.5rem;
+  }
+
+  #contenuto p {
+    font-size: 1.2rem;
+  }
+
+  #contenuto button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+
+#s_c_f {
+  display: flex;
+  width: 95%;
+}
+
+#sasso {
+  background-image: url('https://images.pexels.com/photos/2363901/pexels-photo-2363901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5px;
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  outline: transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  width: 50%; 
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#carta {
+  background-image: url('https://images.pexels.com/photos/963048/pexels-photo-963048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5px;
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  outline: transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  width: 50%; 
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#forbice {
+  background-image: url('https://www.thespruce.com/thmb/QWYH6tk27ftoX3o8QdxwPF89DHI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1608535721-3135b190794d40298bc446e28368ccaa.jpg');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5px;
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  outline: transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  width: 50%; 
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#sasso:hover {
+  box-shadow: 0 0 10px rgba(255, 120, 30, 0.7);
+  background-color: rgba(255, 120, 30, 0.8);
+}
+
+#carta:hover {
+  box-shadow: 0 0 10px rgba(255, 120, 30, 0.7);
+  background-color: rgba(255, 120, 30, 0.8);
+}
+
+#forbice:hover {
+  box-shadow: 0 0 10px rgba(255, 120, 30, 0.7);
+  background-color: rgba(255, 120, 30, 0.8);
+}
+
+#punteggi {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px ;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#out2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  display: contents;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="https://binattimattia.github.io/TPSIT/index.htm">HOME</a>
+  <a href="https://binattimattia.github.io/TPSIT/news.htm">NEWS</a>
+  <a href="https://binattimattia.github.io/TPSIT/ESERCIZI%20HTML-CSS.htm">HTML / CSS</a>
+  <a href="https://binattimattia.github.io/TPSIT/aboutme.htm">CHI SONO</a>
+  <a class="active">JAVASCRIPT</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div id="contenuto">
+    <h1>MORRA BOT</h1>
+    <p>SCEGLI:</p>
+    <div id="s_c_f">
+      <button id="sasso" onclick="tiroSasso()">SASSO</button>
+      <button id="carta" onclick="tiroCarta()">CARTA</button>
+      <button id="forbice" onclick="tiroForbice()">FORBICE</button>
+    </div>
+    <p>LA SCELTA DEL BOT È:</p>
+    <p id="out2"></p>
+    <p id="punteggi"></p>
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+let sceltaBot = "";
+
+function TiroMorraBot() {
+  let numeroCasuale = Math.floor(Math.random() * 3);
+  let morraArray = ["sasso", "carta", "forbice"];
+  sceltaBot = morraArray[numeroCasuale];
+  if (sceltaBot == "carta") { 
+    document.getElementById("out2").innerHTML = '<img src="https://cdn-icons-png.flaticon.com/128/11619/11619989.png" style="width: 50px;">'
+  } else if (sceltaBot == "forbice") {
+    document.getElementById("out2").innerHTML = '<img src="https://cdn-icons-png.flaticon.com/128/10363/10363577.png" style="width: 50px;">'
+  } else {
+    document.getElementById("out2").innerHTML = '<img src="https://cdn-icons-png.flaticon.com/128/12912/12912366.png" style="width: 50px;">'
+  }
+
+}
+
+let punteggio = 0;
+let punteggioBot = 0;
+
+function punteggiMorra() {
+  document.getElementById("punteggi").innerHTML = `PUNTEGGIO:<br>${punteggio} | ${punteggioBot}`
+}
+
+function tiroSasso() {
+  TiroMorraBot(); 
+  if (sceltaBot == "carta") { 
+    document.getElementById("out2").innerHTML += "Hai perso!";
+    punteggioBot += 1
+  } else if (sceltaBot == "forbice") {
+    document.getElementById("out2").innerHTML += "Hai vinto!";
+    punteggio += 1
+  } else {
+    document.getElementById("out2").innerHTML += "Pareggio!";
+  }
+  punteggiMorra()
+}
+
+function tiroCarta() {
+  TiroMorraBot(); 
+  if (sceltaBot == "carta") { 
+    document.getElementById("out2").innerHTML += "Pareggio!";
+  } else if (sceltaBot == "forbice") {
+    document.getElementById("out2").innerHTML += "Hai perso!";
+    punteggioBot += 1
+  } else {
+    document.getElementById("out2").innerHTML += "Hai vinto!";
+    punteggio += 1
+  }
+  punteggiMorra()
+}
+
+function tiroForbice() {
+  TiroMorraBot(); 
+  if (sceltaBot == "carta") { 
+    document.getElementById("out2").innerHTML += "Hai vinto!";
+    punteggio += 1
+  } else if (sceltaBot == "forbice") {
+    document.getElementById("out2").innerHTML += "Pareggio!";
+  } else {
+    document.getElementById("out2").innerHTML += "Hai perso!";
+    punteggioBot += 1
+  }
+  punteggiMorra
+}
+
+</script>
+
+</body>
+</html>
