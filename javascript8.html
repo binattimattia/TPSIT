@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 8</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #FF781E;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #FF781E;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #FF781E;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                display: block;
+                float: right;
+            }
+
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        /* Box Styles */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #box1, #box2, #box3, #box5 {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .box h1 {
+            font-size: 1.8rem;
+            color: #FF781E;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #box4 {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 250px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @media (min-width: 600px) {
+            .box {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .box {
+                width: calc(33.33% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="https://binattimattia.github.io/TPSIT/index.htm">HOME</a>
+        <a href="https://binattimattia.github.io/TPSIT/news.htm">NEWS</a>
+        <a href="https://binattimattia.github.io/TPSIT/ESERCIZI%20HTML-CSS.htm">HTML / CSS</a>
+        <a href="https://binattimattia.github.io/TPSIT/aboutme.htm">CHI SONO</a>
+        <a class="active">JAVASCRIPT</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="container">
+        <div id="box1" class="box">
+            <h1>100 numeri casuali tra 1 e 100</h1>
+            <p>Lista numeri:</p>
+            <p id="out1"></p>
+        </div>
+
+        <div id="box2" class="box">
+            <h1>100 numeri consecutivi tra 1 e 1000</h1>
+            <p>Lista numeri:</p>
+            <p id="out2"></p>
+        </div>
+
+        <div id="box3" class="box">
+            <h1>Numeri Primi Casuali</h1>
+            <p>Lista numeri:</p>
+            <p id="out3"></p>
+        </div>
+
+        <div id="box4" class="box">
+            <h1>Numeri primi da 1 a 100</h1>
+            <p>Lista numeri:</p>
+            <p id="out4"></p>
+        </div>
+
+        <div id="box5" class="box">
+            <h1>Fattori dei Numeri</h1>
+            <p id="out5"></p>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        // box1
+        let numeri = [];
+        for (let i = 0; i < 100; i++) {
+            numeri.push(Math.floor(Math.random() * 100));
+        }
+        document.getElementById("out1").textContent = numeri.join(", ");
+
+        // box2
+        let numeri2 = [];
+        let nCas2 = Math.floor(Math.random() * 900);
+        for (let i = 0; i < 100; i++) {
+            numeri2.push(nCas2 + i);
+        }
+        document.getElementById("out2").textContent = numeri2.join(", ");
+
+        // box3
+        let array3 = [];
+        function sceltaPrimi() {
+            let nCas3 = Math.floor(Math.random() * 1000);
+            if (nCas3 % 2 !== 0) {
+                array3.push(nCas3);
+            } else {
+                sceltaPrimi();
+            }
+        }
+        for (let i = 0; i < 10; i++) {
+            sceltaPrimi();
+        }
+        document.getElementById("out3").textContent = array3.join(", ");
+
+        // box4
+        let array4 = [];
+        for (let i = 1; i < 100; i++) {
+            if (i % 2 !== 0) {
+                array4.push(i);
+            }
+        }
+        document.getElementById("out4").textContent = array4.join(", ");
+
+        // box5
+        for (let i = 1; i <= 100; i++) {
+            let fattori = [1];
+            for (let j = 2; j <= i; j++) {
+                if (i % j === 0) {
+                    fattori.push(j);
+                }
+            }
+            document.getElementById("out5").innerHTML += `I fattori di ${i} sono: ${fattori.join(", ")}<br>`;
+        }
+    </script>
+</body>
+</html>
