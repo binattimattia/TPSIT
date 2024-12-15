@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 3</title>
+</head>
+<style>
+    #red {
+        color: red;
+    }
+
+</style>
+<body>
+    <p id="out-1"></p>
+    <script>
+        function stampaArray(arr){
+            for(let i = 0;i<arr.length;i++){
+                if(isPrime(arr[i])){
+                    document.getElementById("out-1").innerHTML += `<p id="red"> ${arr[i]} </p>`
+                }else{
+                    document.getElementById("out-1").innerHTML += `<p> ${arr[i]} </p>`
+                }
+            }
+        }
+
+        function isMultipleof(n,m){
+            // n[int] : controllo che sia multiplo di n
+            // m
+            if(n % m === 0){
+                return true
+            }
+            return false
+        }
+       
+       
+        let numeri = []
+
+        for(let i = 0;i <1000;i++){
+            numeri[i] = i+1
+        }
+
+        function isPrime(num) {
+            if (num <= 1) {
+                return true
+            };
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        stampaArray(numeri);
+    </script>
+</body>
+</html>
