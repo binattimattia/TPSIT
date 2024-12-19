@@ -3,107 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analisi numerica</title>
+    <title>Array 4</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #FF781E;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #FF781E;
+            color: white;
+        }
+
+        .topnav a.active {
+            background-color: #FF781E;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+            font-size: 28px;
+            color: #f2f2f2;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                display: block;
+                float: right;
+            }
+
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+                padding: 14px 20px;
+            }
+        }
+
+        #contenuto {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            width: calc(33.333% - 20px);
+            text-align: center;
+            box-sizing: border-box;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 14px;
+        }
+
+        .prime-box {
+            color: red;
+        }
+    </style>
 </head>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f9f9f9;
-}
-
-/* Topnav */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #FF781E;
-  transition: background-color 0.3s ease;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 16px 20px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.topnav a:hover {
-  background-color: #FF781E;
-  color: white;
-}
-
-.topnav a.active {
-  background-color: #FF781E;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-  font-size: 28px;
-  color: #f2f2f2;
-  cursor: pointer;
-  padding: 10px 15px;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-
-  .topnav a.icon {
-    display: block;
-    float: right;
-  }
-
-  .topnav.responsive {
-    position: relative;
-  }
-
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-    padding: 14px 20px;
-  }
-}
-
-#contenuto {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.box {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  padding: 10px;
-  width: calc(33.333% - 20px);
-  text-align: center;
-  box-sizing: border-box;
-  margin: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 14px;
-}
-
-</style>
 <body>
     <div class="topnav" id="myTopnav">
         <a href="https://binattimattia.github.io/TPSIT/index.htm">HOME</a>
@@ -123,15 +125,16 @@ body {
             const contenitore = document.getElementById('contenuto');
 
             for (let i = 1; i <= 10000; i++) {
-                box = document.createElement('div');
+                const box = document.createElement('div');
                 box.className = 'box';
 
                 let contenuto = `Numero: ${i}<br>`;
                 contenuto += i % 2 === 0 ? "Il numero è pari<br>" : "Il numero è dispari<br>";
                 if (isPrime(i)) {
-                    contenuto += "Il numero è primo<br>"
+                    contenuto += "Il numero è primo<br>";
+                    box.classList.add('prime-box');
                 } else {
-                    contenuto += "Il numero non è primo<br>"
+                    contenuto += "Il numero non è primo<br>";
                 }
                 contenuto += `Doppio: ${i * 2}<br>`;
                 contenuto += `Metà intera: ${Math.round(i / 2)}<br>`;
