@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheda Personale</title>
+    <style>
+        body {
+            background-color: rgb(239, 239, 239);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        .container {
+            margin: 20px;
+            max-width: 95%;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            border-radius: 5px;
+        }
+
+        .info img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info ul li {
+            margin-bottom: 10px;
+        }
+
+        .description {
+            margin-top: 20px;
+        }
+
+        .passions,
+        .skills,
+        .goals {
+            margin-top: 40px;
+        }
+
+        .passions-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .passions-item img {
+            margin-left: 20px;
+            max-width: 150px;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+
+        .quote {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .quote img {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .info img {
+                float: none;
+                margin: 0 auto 20px;
+                display: block;
+            }
+
+            .passions-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .passions-item img {
+                margin: 10px 0 0 0;
+                max-width: 100px;
+            }
+        }
+
+        .topnav {
+  overflow: hidden;
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #FF781E;
+  transition: background-color 0.3s ease;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.topnav a:hover {
+  background-color: #FF781E;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #FF781E;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+  font-size: 28px;
+  color: #f2f2f2;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    display: block;
+    float: right;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    padding: 14px 20px;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <h1>SCHEDA PERSONALE</h1>
+    <div class="container">
+        <div class="info">
+            <p><b>INFORMAZIONI PERSONALI:</b></p>
+            <img src="1727432991741.jpg" alt="Foto personale" width="125">
+            <ul>
+                <li><b>NOME E COGNOME:</b> Mattia Binatti</li>
+                <li><b>ETÀ:</b> 16 anni</li>
+                <li><b>CLASSE E ISTITUTO:</b> 3AINFO; IIS JC Maxwell</li>
+                <li><b>DATA DI NASCITA:</b> 25 Gennaio 2008</li>
+                <li><b>LUOGO DI RESIDENZA:</b> Nichelino</li>
+            </ul>
+        </div>
+        <div class="description">
+            <p><b>DESCRIZIONE:</b></p>
+            <p>
+                Fin da bambino, nonostante io sia nato a Moncalieri, vivo da sempre a Nichelino. Una mia qualità distintiva
+                sicuramente è quella motivazionale, siccome in ogni attività che io svolgo, ci metto sempre passione e
+                anche se sbaglio ci riprovo, <b>sempre</b>.
+            </p>
+        </div>
+        <div class="passions">
+            <p><b>I MIEI 3 INTERESSI/PASSIONI:</b></p>
+            <div class="passions-item">
+                <p><b>CALCIO:</b> Lo pratico presso ASD Beiborg e tifo la Juventus. È divenuto ormai da tempo il mio hobby, dove vedendo le partite oppure giocarle mi libera da tutto.</p>
+                <img src="https://www.linkiesta.it/wp-content/uploads/2020/03/d7ce080a-ec97-45b7-a627-72266fb08e67_large.jpg" alt="Calcio">
+            </div>
+            <div class="passions-item">
+                <p><b>VIDEOGIOCHI:</b> Una parte di me che mi aiuta a sfogarmi nel tempo libero.</p>
+                <img src="https://img.freepik.com/foto-gratuito/sfondo-di-programmazione-con-persona-che-lavora-con-i-codici-sul-computer_23-2150010144.jpg" alt="Programmazione">
+            </div>
+            <div class="passions-item">
+                <p><b>FONDI:</b> Un mondo che sto esplorando e che spero possa diventare una mia realizzazione futura.</p>
+                <img src="https://img.freepik.com/vettori-gratuito/icona-di-stile-cartone-animato-3d-di-monete-e-banconote-d-oro-pila-di-monete-con-il-simbolo-del-dollaro-mazzetta-di-denaro-o-contanti-illustrazione-vettoriale-piatta-di-risparmio-ricchezza-economia-finanza-profitto-concetto-di-valuta_74855-25998.jpg" alt="Fondi">
+            </div>
+        </div>
+        <div class="skills">
+            <p><b>3 COMPETENZE CHE HO SVILUPPATO:</b></p>
+            <ol>
+                <li><b>CURIOSITÀ:</b> Fa parte di me fin da bambino e la applico quotidianamente.</li>
+                <li><b>ORGANIZZAZIONE:</b> Una competenza che ho sviluppato per gestire al meglio gli impegni.</li>
+                <li><b>TECNOLOGICO:</b> Una passione che coltivo e che spero di trasformare in un lavoro.</li>
+            </ol>
+        </div>
+        <div class="goals">
+            <p><b>OBIETTIVI E SOGNI PERSONALI:</b></p>
+            <p>In futuro non so bene cosa vorrò fare, ma desidero sentirmi realizzato. Questo significa avere una famiglia felice e guadagnare tanti fondi, non per ricchezza fine a sé stessa, ma per dare valore ai miei sforzi.</p>
+        </div>
+        <div class="quote">
+            <p><b>CITAZIONE:</b></p>
+            <p>“Il segreto per andare avanti è iniziare.” - Sally Berger</p>
+            <p>“Fate ciò che potete, con ciò che avete, dove siete.” - Theodore Roosevelt</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Y97ZjUQRDHb3c9mJMm6Cw5uknOnH49h-yw&s" alt="Citazione">
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  .section {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .container {
+    animation: fadeInScale 1.5s ease-in-out;
+    padding: 20px;
+    text-align: center;
+  }
+
+  button[alt="bottone1"] {
+    background-image: linear-gradient(to right, #e44d26, #3747d6);
+    border-radius: 10px;
+    border-color: white;
+    color: #eaecee;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  button[alt="bottone2"] {
+    background-image: linear-gradient(to left, #ffdf00, #0d0b00);
+    border-radius: 10px;
+    border-color: white;
+    color: #eaecee;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  button[alt="bottone1"]:hover {
+    border-color: white;
+  }
+
+  button[alt="bottone2"]:hover {
+    border-color: white;
+  }
+
+  .card {
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar {
+    background-color: #eaecee;
+    position: fixed;
+  }
+
+  .navbar-nav .nav-link {
+    cursor: pointer;
+  }
+
+  .container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img[alt="Titolo CodeCraft"] {
+    max-width: 80%;
+  }
+
+  .centered-text {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  @media (width: 430px) {
+    img[alt="Titolo CodeCraft"] {
+      max-width: 95%;
+    }
+  }
+
+  @media (width: 1024px) {
+    img[alt="Titolo CodeCraft"] {
+      max-width: 100%;
+    }
+  }
+
+.content-box1, .content-box2, .content-box4 {
+
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  background-color: #c4c4c4;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #FF781E;
+}
+
+.content-box3 {
+display: grid;
+justify-content: center;
+margin: 20px;
+padding: 20px;
+width: 300px;
+height: 500px;
+background-color: #c4c4c4;
+border-radius: 15px;
+box-shadow: 5px 5px 5px #FF781E;
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 216px;
+  height: 288px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #FF781E;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+#contenuto {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+padding: 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.card[alt="carte"] {
+background-color: #ffdf00;
+border: 1px solid #ddd;
+border-radius: 12px;
+text-align: center;
+padding: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card[alt="carte"]:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card[alt="carte"] h3 {
+margin-bottom: 10px;
+font-size: 18px;
+color: #333;
+}
+
+.card[alt="carte"] a {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 15px;
+background-color: black;
+color: white;
+text-decoration: none;
+border-radius: 6px;
+font-size: 14px;
+font-weight: bold;
+transition: background-color 0.3s;
+}
+
+.card[alt="carte"] a:hover {
+background-color:  black;
+}
+
+/* Media query per dispositivi molto piccoli */
+@media screen and (max-width: 400px) {
+#contenuto {
+  grid-template-columns: 1fr;
+  padding: 10px;
+}
+
+.card[alt="carte"] {
+  padding: 15px;
+}
+}
