@@ -5,118 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CodeCraft</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      animation: fadeInScale 1.5s ease-in-out;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .bottone1 {
-      background-image: linear-gradient(to right, #e44d26, #3747d6);
-      border-radius: 10px;
-      color: #eaecee;
-      padding: 10px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .bottone2 {
-      background-image: linear-gradient(to left, #ffdf00, #0d0b00);
-      border-radius: 10px;
-      color: #eaecee;
-      padding: 10px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .bottone:hover {
-      transform: scale(1.1);
-    }
-
-    .card {
-      margin: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar {
-      background-color: #eaecee;
-    }
-
-    .navbar-nav .nav-link {
-      cursor: pointer;
-    }
-
-    .container img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    img[alt="Titolo CodeCraft"] {
-      max-width: 80%;
-    }
-
-    .centered-text {
-      font-size: 1.5rem;
-      font-family: 'Courier New', Courier, monospace;
-      color: white;
-      text-align: center;
-      margin: 0 auto;
-      max-width: 90%;
-    }
-
-    @media (width: 430px) {
-      img[alt="Titolo CodeCraft"] {
-        max-width: 95%;
-      }
-    }
-
-    @media (width: 1024px) {
-      img[alt="Titolo CodeCraft"] {
-        max-width: 100%;
-      }
-    }
-
-  </style>
 </head>
 
 <body>
   <video class="video-background" autoplay muted loop>
-    <source src="video_sfondo.mp4" type="video/mp4">
+    <source src="HOME/video_sfondo.mp4" type="video/mp4">
   </video>
 
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -131,13 +26,16 @@
         <div class="navbar-nav">
           <a class="nav-link" onclick="scrollToSection('exercises')">Esercizi</a>
         </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="" target="_blank">Chi sono</a>
+        </div>
       </div>
     </div>
   </nav>
 
   <div id="home" class="section">
     <div class="container">
-      <img src="titolo_codecraft.svg" alt="Titolo CodeCraft">
+      <img src="HOME/titolo_codecraft.svg" alt="Titolo CodeCraft">
       <div class="centered-text">
         <p>Esplora, Impara e Crea con la Programmazione.</p>
       </div>
@@ -149,12 +47,11 @@
       <div class="row text-center">
         <div class="col-12 col-md-6">
           <div class="card">
-            <img src="html e css.png" class="card-img-top" alt="" width="80%">
+            <img src="ESERCIZI/html e css.png" class="card-img-top" alt="" width="80%">
             <div class="card-body">
               <h5 class="card-title">HTML e CSS</h5>
               <p class="card-text">Premi il pulsante sottostante per visualizzare gli esercizi HTML e CSS</p>
-              <a href="#" class="bottone1">VAI AGLI ESERCIZI</a>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <button alt="bottone1" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
                 VAI AGLI ESERCIZI
               </button>
               
@@ -163,18 +60,20 @@
         </div>
         <div class="col-12 col-md-6">
           <div class="card">
-            <img src="javascript.png" class="card-img-top" alt="" width="80%">
+            <img src="ESERCIZI/javascript.png" class="card-img-top" alt="" width="80%">
             <div class="card-body">
               <h5 class="card-title">JAVASCRIPT</h5>
               <p class="card-text">Premi il pulsante sottostante per visualizzare gli esercizi JAVASCRIPT</p>
-              <a href="#" class="bottone2">VAI AGLI ESERCIZI</a>
+              <button alt="bottone2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                VAI AGLI ESERCIZI
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -184,21 +83,159 @@
           </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          ...
+        <div class="modal-body" style="display: flex; justify-content: center; width: 100%;">
+          <div id="spazio">
+            <div class="content-box1">
+              <h1>BOX COLORATI CON DIV E CSS</h1>
+              <div style="background-color: #EBF0F2; width: 100px; height: 100px; border: 3px solid #737779; margin: 10px auto;"></div>
+              <div style="background-color: #e27e0b; width: 100px; height: 100px; border: 3px solid #68390d; margin: 10px auto;"></div>
+              <div style="background-color: #00ff62; width: 100px; height: 100px; border: 3px solid #04531c; margin: 10px auto;"></div>
+              <div style="background-color: #ff00c8; width: 100px; height: 100px; border: 3px solid #720872; margin: 10px auto;"></div>
+              <div style="background-color: #e66e6e; width: 100px; height: 100px; border: 3px solid #ff0000; margin: 10px auto;"></div>
+            </div>
+          
+            <div class="content-box2">
+              <h1>BOX COLORATI CON PADDING E MARGIN</h1>
+              <div style="background-color: #EBF0F2; padding: 20px; border: 3px solid #737779; margin-bottom: 10px;">
+                <p>Follia è fare sempre la stessa cosa e aspettarsi ogni volta un risultato diverso</p>
+                <p>- Albert Einstein</p>
+              </div>
+              <div style="background-color: #e27e0b; padding: 20px; border: 3px solid #68390d; margin-bottom: 10px;">
+                <p>L’importante non è vincere, ma partecipare</p>
+                <p>- Pierre de Coubertin</p>
+              </div>
+              <div style="background-color: #00ff62; padding: 20px; border: 3px solid #04531c; margin-bottom: 10px;">
+                <p>Se non hanno pane, che mangino brioche!</p>
+                <p>- Maria Antonietta d’Asburgo-Lorena</p>
+              </div>
+              <div style="background-color: #ff00c8; padding: 20px; border: 3px solid #720872; margin-bottom: 10px;">
+                <p>Il fine giustifica i mezzi</p>
+                <p>- Niccolò Macchiavelli</p>
+              </div>
+              <div style="background-color: #e66e6e; padding: 20px; border: 3px solid #ff0000; margin-bottom: 10px;">
+                <p>Eppur si muove!</p>
+                <p>- Galileo</p>
+              </div>
+            </div>
+          
+            <div class="content-box3">
+              <h1>FLIP CARD</h1>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="ESERCIZI/HTML_CSS/1727432991741.jpg" alt="Avatar" style="width: 216px; height: 288px; border-radius: 10px;">
+                  </div>
+                  <div class="flip-card-back">
+                    <h1>Mattia Binatti</h1>
+                    <p>IIS JC Maxwell</p>
+                    <p>3A INFO</p>
+                    <p>PROGRAMMATORE</p>
+                    <p><span style="color: white;">FORZA</span> <span style="color: black;">JUVE!</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="content-box4">
+              <h1>Ciao, questa è la mia prima pagina</h1>
+              <p>Sono <u>Mattia Binatti</u> e inizio a studiare l'HTML.</p>
+              <p style="color: red"><strong>Chi ha inventato questo linguaggio?</strong></p>
+              <p>Sir Tim Berners-Lee</p>
+              <p style="color: red"><strong>Quando è stato inventato?</strong></p>
+              <p>Nel 1990</p>
+              <p style="color: red"><strong>Quali sono gli scopi di questo linguaggio?</strong></p>
+              <p>Gestire i contenuti associandone o specificandone allo stesso tempo la struttura grafica (layout) all'interno della pagina web da realizzare grazie all'utilizzo di tag diversi.</p>
+              <p style="color: red"><strong>Che cos'è il WEB?</strong></p>
+              <p>è uno spazio elettronico e digitale di Internet destinato alla pubblicazione di contenuti multimediali</p>
+              <p style="color: red"><strong>Che problemi risolveva il WEB?</strong></p>
+              <p>Risolveva problemi come comunicare da casa, studiare a distanza, fare acquisti online, ecc.</p>
+              <p style="color: red"><strong>Che differenza c'è tra web, HTML ed Internet?</strong></p>
+              <p>1. Internet è la rete. <br>2. Web è uno dei servizi che usano Internet per mostrare pagine. <br>3. HTML è il linguaggio che serve a creare quelle pagine.</p>
+              <p>I miei siti preferiti sono:</p>
+              <ol>
+                <li><a href="https://www.juventus.com/it">Juventus.com</a></li>
+                <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+                <li><a href="https://www.amazon.it/">Amazon.it</a></li>
+              </ol>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CHIUDI</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="" width="45%"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="contenuto">
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 1</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript1.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 2</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript2.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 3</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript3.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 4</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript4.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 5</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript5.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 6</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript6.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>JAVASCRIPT 7</h3>
+              <a href="https://binattimattia.github.io/TPSIT/javascript7.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>ARRAY 1</h3>
+              <a href="https://binattimattia.github.io/TPSIT/array1.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>ARRAY 2</h3>
+              <a href="https://binattimattia.github.io/TPSIT/array2.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>ARRAY 3</h3>
+              <a href="https://binattimattia.github.io/TPSIT/array3.html">Vai all'esercizio</a>
+            </div>
+            <div class="card" alt="carte">
+              <h3>ANALISI NUMERICA</h3>
+              <a href="https://binattimattia.github.io/TPSIT/analisinumerica.html">Vai all'esercizio</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CHIUDI</button>
         </div>
       </div>
     </div>
   </div>
   <script>
+
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
-      section.scrollIntoView({ behavior: 'smooth' });
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
