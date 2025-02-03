@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bootstrap 3</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to right, #0093E9, #80D0C7);
+    }
+
+    .accordion {
+        max-width: 75%;
+        margin: 0 auto;
+        margin-top: 8%;
+        padding: 20px;
+        display: grid;
+        justify-content: center;
+    }
+
+    h1 {
+        margin-top: 10px;
+        color: white;
+    }
+
+    hr {
+        color: white;
+    }
+
+
+</style>
+<body>
+    <h1 class="text-center">Le basi dell'informatica</h1>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>#1 Cos'è un algoritmo?</strong>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Un algoritmo è una sequenza finita e ordinata di istruzioni o passi logici progettati per risolvere un problema o eseguire un compito specifico. Gli algoritmi sono fondamentali in informatica perché guidano il comportamento dei programmi e permettono di automatizzare operazioni complesse.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong>#2 Che cosa si intende per programmazione orientata agli oggetti (OOP)?</strong>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                La programmazione orientata agli oggetti è un paradigma di programmazione in cui il software è organizzato attorno a “oggetti” che rappresentano entità con dati (attributi) e comportamenti (metodi). I concetti chiave dell'OOP includono l'incapsulamento, l'ereditarietà, il polimorfismo e l'astrazione, che aiutano a creare codice modulare e riutilizzabile.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <strong>#3 Qual è la differenza tra hardware e software?</strong>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                L'hardware comprende tutte le componenti fisiche di un computer (come CPU, memoria, dischi, periferiche), mentre il software è l'insieme di programmi, applicazioni e sistemi operativi che eseguono operazioni e gestiscono l'hardware.
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <strong>#4 Che cos'è un sistema operativo?</strong>
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Un sistema operativo (OS) è un software di base che gestisce le risorse hardware del computer e fornisce un'interfaccia tra l'utente e il computer. Esempi di sistemi operativi includono Windows, macOS, Linux e Android. L'OS coordina l'esecuzione dei programmi, la gestione della memoria, il controllo degli input/output e la sicurezza del sistema.
+              </div>
+            </div>
+          </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              <strong>#5 Cos'è il cloud computing?</strong>
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Il cloud computing è un modello che permette l'accesso on-demand a risorse di elaborazione (come server, storage, database, networking, software e altri servizi) tramite Internet. Questo approccio consente di scalare le risorse in base alle esigenze e di pagare solo per l'utilizzo effettivo, riducendo i costi e semplificando la gestione dell'infrastruttura IT.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              <strong>#6 Cosa si intende per cybersecurity?</strong>
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                La cybersecurity è l'insieme delle pratiche, tecnologie e processi finalizzati a proteggere sistemi, reti e dati da attacchi, danni o accessi non autorizzati. Essa include misure preventive come firewall, crittografia, autenticazione e monitoraggio continuo per salvaguardare l'integrità, la riservatezza e la disponibilità delle informazioni.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
