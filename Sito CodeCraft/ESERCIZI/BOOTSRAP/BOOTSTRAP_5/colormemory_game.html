@@ -98,7 +98,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="color-btn" data-alt="9" style="background-color: red;">
+          <div class="color-btn" data-alt=""alt="9" style="background-color: red;">
             <div class="color-btn-inner"></div>
           </div>
         </div>
@@ -108,8 +108,30 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const numRandom = Math.floor(Math.random() * 9) + 1;
-    console.log(numRandom);
+    let index = 0;
+      const numRandom = Math.floor(Math.random() * 9) + 1;
+      let sequenza = [];
+      sequenza.push(numRandom);
+      console.log(sequenza)
+      let sequenza_utente = [];
+
+      const colorButtons = document.querySelectorAll('.color-btn');
+
+      colorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Ottengo l'alt del bottone (1-9)
+          let colorId = button.getAttribute('data-alt');
+          console.log(colorId)
+          const elementosequenza = sequenza[index];
+          if (colorId == elementosequenza) {
+            console.log('Hai vinto!')
+          } else {
+            console.log('Hai perso!')
+          }
+        });
+      });
+      index += 1;
+
 
   </script>
 </body>
