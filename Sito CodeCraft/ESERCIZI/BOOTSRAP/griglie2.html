@@ -18,14 +18,15 @@
         margin: 10px;
         justify-content: center;
         display: grid;
-        padding: 35px;
+        padding: 21px;
+        font-size: 2rem;
     }
 
     .container {
         border-radius: 10px;
         border-color: white;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.274);
-        margin-bottom: 100px;
+        margin-bottom: 60px;
         margin-top: 100px;
     }
 
@@ -35,65 +36,78 @@
         display: grid;
     }
 
+    #testo {
+    width: 250px;
+    height: 50px;
+    border: 2px solid rgb(119, 119, 119); 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: white; 
+    display: grid;
+    justify-content: center;
+}
 
-    .container[alt="griglia3x3"] {
-        width: 450px;
-        justify-content: center;
+    p {
         display: grid;
+        justify-content: center;
+        margin-bottom: 0;
     }
-
-    #contenuto[alt="contenuto"] {
-        width: 450px;
-        border: 1px solid;
-        border-radius: 5px;
-
-    }
-
 </style>
 <body>
     <div class="container text-center" alt="griglia2x2">
-        <h1>Griglia 2x2</h1>
+        <h1>Mini Calcolatrice</h1>
         <div class="row">
-            <div class="btn" onclick="somma()" style="background-color: aqua;">+</div>
-            <div class="btn" onclick="sottrazione()" style="background-color: aquamarine;">-</div>
+            <div class="btn" onclick="somma()" style="background-color: #28a745;">+</div>
+            <div class="btn" onclick="sottrazione()" style="background-color: #dc3545;">-</div>
         </div>
         <div class="row">
-            <div class="btn" onclick="moltiplicazione()" style="background-color: azure;">X</div>
-            <div class="btn" onclick="divisione()" style="background-color: beige;">:</div>
+            <div class="btn" onclick="moltiplicazione()" style="background-color: #007bff;">x</div>
+            <div class="btn" onclick="divisione()" style="background-color: #fd7e14;">:</div>
         </div>
     </div>
 
-    </div>
-
-    <p id="testo"></p>
+    <div id="testo"></div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
-        let numerofinale = 0
+        let numerofinale = 0;
 
         function somma() {
-            const numero = prompt("Inserisci un numero:");
-            numerofinale = numero + numerofinale;
-            document.getElementsById("testo").innerHTML = numerofinale
+            const numero = parseFloat(prompt("Inserisci un numero:"));
+            if (!isNaN(numero)) {
+                numerofinale += numero;
+                document.getElementById("testo").innerHTML = `<p>${numerofinale}</p>`;
+            }
         }
 
         function sottrazione() {
-            const numero = prompt("Inserisci un numero:");
-  
-            numerofinale = numerofinale - numero
-            document.getElementsById("contenuto").innerHTML = `<p>${numerofinale}</p>`
+            const numero = parseFloat(prompt("Inserisci un numero:"));
+            if (!isNaN(numero)) {
+                numerofinale -= numero;
+                document.getElementById("testo").innerHTML = `<p>${numerofinale}</p>`;
+            }
         }
 
         function moltiplicazione() {
-            const numero = prompt("Inserisci un numero:");
-            numerofinale = numerofinale * numero; 
-            document.getElementsById("contenuto").innerHTML = `<p>${numerofinale}</p>`
+            const numero = parseFloat(prompt("Inserisci un numero:"));
+            if (!isNaN(numero)) {
+                numerofinale *= numero;
+                document.getElementById("testo").innerHTML = `<p>${numerofinale}</p>`;
+            }
         }
 
         function divisione() {
-            const numero = prompt("Inserisci un numero:");
-            numerofinale = numerofinale / numero;
-            document.getElementsById("contenuto").innerHTML = `<p>${numerofinale}</p>`
+            const numero = parseFloat(prompt("Inserisci un numero:"));
+            if (!isNaN(numero) && numero !== 0) {
+                numerofinale /= numero;
+                document.getElementById("testo").innerHTML = `<p>${numerofinale}</p>`;
+            } else if (numero === 0) {
+                alert("Errore: divisione per zero non consentita.");
+            }
         }
     </script>
 </body>
