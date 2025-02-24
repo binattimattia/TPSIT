@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Verifica 2 | Binatti Mattia</title>
+</head>
+<style>
+    .btn {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+    body {
+        justify-content: center;
+        display: grid;
+    }
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+    .row {
+        width: 360px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="text-center">Esercizio 2: Griglia 3x3</h1>
+            <div class="row">
+                <div class="btn btn-primary" onclick="changeColor(this)"></div>
+                <div class="btn btn-primary" onclick="showAlert()"></div>
+                <div class="btn btn-primary" onclick="rotateSquare(this)"></div>
+            </div>
+            <div class="row">
+                <div class="btn btn-primary" onclick="scaleSquare(this)"></div>
+                <div class="btn btn-primary" onclick="logMessage()"></div>
+                <div class="btn btn-primary" onclick="randomBackground()"></div>
+            </div>
+            <div class="row">
+                <div class="btn btn-primary" onclick="toggleVisibility(this)"></div>
+                <div class="btn btn-primary" id="bottone9" onclick="changeText(this)"></div>
+                <div class="btn btn-primary"></div>
+            </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeColor(element) {
+            element.style.backgroundColor = "red";
+        }
+        function showAlert() {
+            alert("Hai cliccato il quadrato!")
+        }
+        function rotateSquare(element) {
+            element.style.transform += "rotate(45deg)";
+        }
+        function scaleSquare(element) {
+            element.style.transform = "scale(1.2)";
+        }
+        function logMessage() {
+            console.log("Hai cliccato il bottone!");
+        }
+        function randomBackground() {
+            const colori = ["green", "red", "blue"]
+            const numerocasuale = Math.floor(Math.random() * 3);
+            document.body.style.backgroundColor = colori[numerocasuale];
+        }
+        let indice = 1 // se è dispari si toglie, se pari compare
+        function toggleVisibility(element) {
+            if (indice % 2 == 0) {
+                element.style.backgroundColor = "rgb(13, 110, 253)";
+            } else {
+                element.style.backgroundColor = "rgba(13, 109, 253, 0)";
+            }
+            indice += 1
+        }
+        function changeText(element) {
+            document.element.innerHTML = "Cliccato!"
+        }
+        function temp() {
+            
+        }
+
+    </script>
+</body>
+</html>
