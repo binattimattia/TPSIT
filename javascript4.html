@@ -126,7 +126,6 @@ button {
   border-radius: 12px;
   color: #FFFFFF;
   cursor: pointer;
-  display: inline-block;
   font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -203,7 +202,7 @@ button:hover {
 
 <script>
 function myFunction() {
-  var x = document.getElementById("myTopnav");
+  const x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
