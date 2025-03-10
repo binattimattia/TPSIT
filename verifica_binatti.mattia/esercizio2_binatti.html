@@ -76,7 +76,7 @@
 
     // Evidenzia temporaneamente un pulsante cambiando colore
     function evidenziaPulsante(id) {
-      const pulsante = document.querySelector(`[data-id='${id}']`);
+      const pulsante = document.querySelector(`data-id='${id}'`);
       const coloreOriginale = pulsante.style.backgroundColor;
       pulsante.style.backgroundColor = "white";
       setTimeout(() => pulsante.style.backgroundColor = coloreOriginale, 500);
