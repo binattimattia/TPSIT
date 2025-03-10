@@ -11,7 +11,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       margin: 0;
       padding: 20px;
       background: linear-gradient(to right, #00c6ff, #0072ff);
@@ -22,13 +21,13 @@
       font-size: 300%;
     }
     .card {
-      max-width: 500px;
+      max-width: 600px;
       width: 100%;
-      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.644);
       padding: 25px;
       background: #f8f9fa;
+      border: none;
       border-radius: 10px;
-      text-align: center;
     }
     .color-btn {
       position: relative;
@@ -46,101 +45,98 @@
       right: 0;
       border-radius: 10px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    #start-btn {
-      margin-top: 20px;
-      width: 50%;
-      margin-left: 25%;
+    .highlight {
+      opacity: 0.5;
     }
   </style>
 </head>
 <body>
-  <h1>Color Memory Game</h1>
-  <div class="card">
-    <p class="lead"><b>Punteggio: <span id="score">0</span></b></p>
+  <h1 class="mt-3 mb-3">Color Memory Game</h1>
+  <div class="card text-center">
+    <div class="lead mb-3"><b>Punteggio: <span id="score">0</span></b></div>
+    <button id="start" class="btn btn-primary mb-3">Inizia</button>
     <div class="container">
-      <div class="grid" id="buttons-container"></div>
+      <div class="row row-cols-3 g-2">
+        <div class="col"><div class="color-btn" data-id="1" style="background-color: green;"></div></div>
+        <div class="col"><div class="color-btn" data-id="2" style="background-color: rgb(121, 214, 0);"></div></div>
+        <div class="col"><div class="color-btn" data-id="3" style="background-color: yellow;"></div></div>
+        <div class="col"><div class="color-btn" data-id="4" style="background-color: rgb(0, 82, 75);"></div></div>
+        <div class="col"><div class="color-btn" data-id="5" style="background-color: black;"></div></div>
+        <div class="col"><div class="color-btn" data-id="6" style="background-color: #e06c00;"></div></div>
+        <div class="col"><div class="color-btn" data-id="7" style="background-color: blue;"></div></div>
+        <div class="col"><div class="color-btn" data-id="8" style="background-color: #880081;"></div></div>
+        <div class="col"><div class="color-btn" data-id="9" style="background-color: red;"></div></div>
+      </div>
     </div>
-    <button id="start-btn" class="btn btn-warning">Inizia</button>
   </div>
-
+  
   <script>
-    const colori = ["green", "rgb(121, 214, 0)", "yellow", "rgb(0, 82, 75)", "black", "#e06c00", "blue", "#880081", "red"];
     let sequenza = [];
     let sequenzaUtente = [];
     let punteggio = 0;
-    let indice = 0;
+    const pulsantiColori = document.querySelectorAll('.color-btn');
+    const punteggioDisplay = document.getElementById('score');
+    const pulsanteStart = document.getElementById('start');
 
-    function creaBottoni() {
-      const container = document.getElementById("buttons-container");
-      container.innerHTML = "";
-      colori.forEach((colore, i) => {
-        const btn = document.createElement("div");
-        btn.classList.add("color-btn");
-        btn.style.backgroundColor = colore;
-        btn.dataset.index = i;
-        btn.addEventListener("click", gestisciInputUtente);
-        container.appendChild(btn);
-      });
+    function coloreCasuale() {
+      return Math.floor(Math.random() * 9) + 1;
     }
 
-    function avviaGioco() {
-      sequenza = [];
-      sequenzaUtente = [];
-      punteggio = 0;
-      indice = 0;
-      document.getElementById("score").innerText = punteggio;
-      prossimoTurno();
-    }
-
-    function prossimoTurno() {
-      sequenzaUtente = [];
-      indice = 0;
-      sequenza.push(Math.floor(Math.random() * 9));
-      riproduciSequenza();
+    function evidenziaPulsante(id) {
+      const pulsante = document.querySelector(`[data-id='${id}']`);
+      pulsante.classList.add('highlight');
+      setTimeout(() => pulsante.classList.remove('highlight'), 500);
     }
 
     function riproduciSequenza() {
       let i = 0;
+      sequenzaUtente = [];
       const intervallo = setInterval(() => {
         if (i >= sequenza.length) {
           clearInterval(intervallo);
           return;
         }
-        illuminaBottone(sequenza[i]);
+        evidenziaPulsante(sequenza[i]);
         i++;
-      }, 1000);
+      }, 800);
     }
 
-    function illuminaBottone(indice) {
-      const bottone = document.querySelectorAll(".color-btn")[indice];
-      bottone.style.opacity = "0.5";
-      setTimeout(() => bottone.style.opacity = "1", 500);
-    }
-
-    function gestisciInputUtente(event) {
-      const selezionato = parseInt(event.target.dataset.index);
-      sequenzaUtente.push(selezionato);
-
-      if (selezionato !== sequenza[sequenzaUtente.length - 1]) {
-        alert("Hai perso! Punteggio: " + punteggio);
-        avviaGioco();
-        return;
+    function controllaInputUtente() {
+      for (let i = 0; i < sequenzaUtente.length; i++) {
+        if (sequenzaUtente[i] !== sequenza[i]) {
+          alert('Hai perso! Punteggio: ' + punteggio);
+          punteggio = 0;
+          sequenza = [];
+          return;
+        }
       }
-
       if (sequenzaUtente.length === sequenza.length) {
         punteggio++;
-        document.getElementById("score").innerText = punteggio;
+        punteggioDisplay.textContent = punteggio;
         setTimeout(prossimoTurno, 1000);
       }
     }
 
-    document.getElementById("start-btn").addEventListener("click", avviaGioco);
-    creaBottoni();
+    function prossimoTurno() {
+      sequenza.push(coloreCasuale());
+      riproduciSequenza();
+    }
+
+    pulsanteStart.addEventListener('click', () => {
+      punteggio = 0;
+      sequenza = [coloreCasuale()];
+      punteggioDisplay.textContent = punteggio;
+      riproduciSequenza();
+    });
+
+    pulsantiColori.forEach(pulsante => {
+      pulsante.addEventListener('click', () => {
+        const id = parseInt(pulsante.getAttribute('data-id'));
+        sequenzaUtente.push(id);
+        evidenziaPulsante(id);
+        controllaInputUtente();
+      });
+    });
   </script>
 </body>
 </html>
