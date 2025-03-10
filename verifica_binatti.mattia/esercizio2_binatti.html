@@ -45,8 +45,8 @@
 <body>
   <h1 class="mt-3 mb-3">Color Memory Game</h1>
   <div class="card text-center">
-    <div class="lead mb-3"><b>Punteggio: <span id="score">0</span></b></div>
-    <button id="start" class="btn btn-primary mb-3">Inizia</button>
+    <div class="lead mb-3"><b>Punteggio: <span id="punteggio">0</span></b></div>
+    <button id="inizia" class="btn btn-primary mb-3">Inizia</button>
     <div class="container">
       <div class="row row-cols-3 g-2">
         <div class="col"><div class="color-btn" data-id="1" style="background-color: green;"></div></div>
@@ -67,8 +67,7 @@
     let sequenzaUtente = []; // Array per registrare l'input dell'utente
     let punteggio = 0; // Variabile del punteggio
     const pulsantiColori = document.querySelectorAll('.color-btn');
-    const punteggioDisplay = document.getElementById('score');
-    const pulsanteStart = document.getElementById('start');
+    const pulsanteInizia = document.getElementById('inizia');
 
     // Genera un numero casuale tra 1 e 9
     function coloreCasuale() {
@@ -110,7 +109,7 @@
       // Se l'utente ha inserito l'intera sequenza corretta, passa al turno successivo
       if (sequenzaUtente.length === sequenza.length) {
         punteggio++;
-        punteggioDisplay.innerHTML = punteggio;
+        document.getElementById('punteggio').innerHTML = punteggio;
         setTimeout(prossimoTurno, 1000);
       }
     }
@@ -122,10 +121,10 @@
     }
 
     // Gestisce l'inizio del gioco
-    pulsanteStart.addEventListener('click', () => {
+    pulsanteInizia.addEventListener('click', () => {
       punteggio = 0;
       sequenza = [coloreCasuale()];
-      punteggioDisplay.innerHTML = punteggio;
+      document.getElementById('punteggio').innerHTML = punteggio;
       riproduciSequenza();
     });
 
