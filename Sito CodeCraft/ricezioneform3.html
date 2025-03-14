@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricezione Dati Form 3</title>
+</head>
+<body>
+    <p id="output"></p>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        let stringa = params.get("len") || "Valore non fornito";
+        let lunghezza_stringa = stringa.length;
+        document.getElementById("output").innerHTML = `<h1>Esericizio 1</h1>Lunghezza della stringa: ${lunghezza_stringa}`;
+    });
+    </script>
+</body>
+</html>
