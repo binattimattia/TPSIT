@@ -11,8 +11,42 @@
         document.addEventListener("DOMContentLoaded", function () {
         const params = new URLSearchParams(window.location.search);
         let stringa = params.get("len") || "Valore non fornito";
+        let stringa_2 = params.get("len2") || "Valore non fornito";
         let lunghezza_stringa = stringa.length;
-        document.getElementById("output").innerHTML = `<h1>Esericizio 1</h1>Lunghezza della stringa: ${lunghezza_stringa}`;
+        let lunghezza_stringa2 = stringa_2.length;
+        document.getElementById("output").innerHTML = `<h1>Esercizio 1</h1>Lunghezza delle stringhe: <br>1) ${lunghezza_stringa}<br>2) ${lunghezza_stringa2}`;
+
+        function stringaContrario(stringa) {
+            stringa_contraria = "";
+            for (let i = stringa.length - 1; i >= 0; i--) {
+                stringa_contraria += stringa[i];
+            }
+            return stringa_contraria;
+        }
+
+        stringa_contraria1 = stringaContrario(stringa);
+        stringa_contraria2 = stringaContrario(stringa_2);
+
+        document.getElementById("output").innerHTML += `<h1>Esercizio 2</h1>Stringhe al contrario: <br>1) ${stringa_contraria1}<br>2) ${stringa_contraria2}`;
+
+        function unisciStringhe(stringa1, stringa2) {
+            return stringa1 + stringa2;
+        }
+
+        stringhe_unite = unisciStringhe(stringa, stringa_2);
+
+        document.getElementById("output").innerHTML += `<h1>Esercizio 3</h1>Stringhe unite: ${stringhe_unite}`;
+
+        function sommaLunghezze(stringa1, stringa2) {
+            somma_stringhe = stringa1.length + stringa2.length;
+            if (stringa2.length > 20) {
+                alert("La stringa B è troppo lunga!");
+            }
+            return somma_stringhe;
+        }
+
+        somma_stringhe = sommaLunghezze(stringa, stringa_2);
+        document.getElementById("output").innerHTML += `<h1>Esercizio 4</h1>Somma delle lunghezze delle stringhe: ${somma_stringhe}`;
     });
     </script>
 </body>
