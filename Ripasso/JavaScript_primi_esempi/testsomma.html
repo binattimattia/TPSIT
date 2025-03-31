@@ -1,0 +1,24 @@
+<SCRIPT language='JavaScript'>
+function Somma()
+{
+   a=parseInt(document.form1.a1.value); // mi recupera il dato nell'esatto momento
+   b=parseInt(document.form1.b1.value);
+   c=a+b;
+   document.form1.c1.value=String(c);
+}
+</SCRIPT>
+
+<HTML>
+<BODY>
+
+<FORM name='form1'> <!-- oggetto che contiene altri oggetti-->
+
+   <LABEL>A:</LABEL>&nbsp;<INPUT type='text' name='a1' size='3' value='0'><BR>
+   <LABEL>B:</LABEL>&nbsp;<INPUT type='text' name='b1' size='3' value='0'><BR>
+   <BR><INPUT type='button' name='k' value='Somma' onClick="Somma()"><BR><BR>
+   <LABEL>C:</LABEL>&nbsp;<INPUT type='text' name='c1' size='3' value='0'>
+
+</FORM>
+
+</BODY>
+</HTML>

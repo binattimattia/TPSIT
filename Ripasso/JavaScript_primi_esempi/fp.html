@@ -1,0 +1,33 @@
+<SCRIPT language='JavaScript'>
+function scomponi() {
+	n = parseInt(document.form1.n.value);
+	document.write("Scomposizione del numero "+n);
+	
+	document.write("<TABLE border='1'>");
+	f=2;
+	while(n>1) {
+	   if(n%f==0){
+          document.write("<TR><TD>"+f+"</TD></TR>");
+          n=n/f;
+       }
+       else {
+          f=f+1;          
+       }	      	
+    }
+	document.write("</TABLE>");
+	
+}	
+</SCRIPT>
+
+<HTML>
+<BODY>
+
+<FORM name='form1'>
+
+   <LABEL>N:&nbsp;</LABEL><INPUT type='text' name='n' size='3' value='0'><BR>
+   <BR><INPUT type='button' name='k' value='Scomponi' onClick="scomponi()"><BR><BR>
+
+</FORM>
+
+</BODY>
+</HTML>

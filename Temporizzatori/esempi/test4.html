@@ -1,0 +1,61 @@
+<SCRIPT Language='JavaScript'>
+function muovi() {
+   var b=document.getElementById('B');
+      x=parseInt(b.offsetLeft);
+	  x=x+10;
+      y=parseInt(b.offsetTop);
+	  y=y+10;
+      b.style.left=x;
+      b.style.top=y;
+}
+</SCRIPT>
+
+
+<HTML>
+   <HEAD>
+   <TITLE>test4</TITLE>
+   </HEAD>
+
+   <style type="text/css">
+     
+      #B
+      {
+         left:50px;
+         top:50px;
+         height:50px;
+         background-color:green;
+         color:black;
+         position:absolute;
+         height:100px;
+         width:100px;
+         text-align:center;
+         font-size:20px; 
+         border-width:1px;
+         border:solid black;
+      }
+
+   </style>
+
+
+    <BODY>
+
+    <DIV id='B'></DIV>
+	
+    <SCRIPT Language='JavaScript'>
+       var counter = 1000;
+       var myFunction = function(){
+          if(counter>0)
+          {
+             muovi();
+             clearInterval(interval);
+             counter = counter - 100;           // per cambiare la variabile prima fermo (clearinterval), poi modifico e la faccio ripartire (setInterval)
+             interval = setInterval(myFunction, counter);
+          }
+       }
+       var interval = setInterval(myFunction, counter);    
+   </SCRIPT>
+
+   </BODY>
+
+</HTML>
+

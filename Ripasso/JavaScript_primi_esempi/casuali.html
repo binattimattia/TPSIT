@@ -1,0 +1,38 @@
+<SCRIPT language="JavaScript">
+function punti()
+{
+   massimo = 6
+   minimo = 1
+
+   righe=parseInt(document.F1.RI.value)
+   colonne=parseInt(document.F1.CO.value)
+   document.write("<H3>Casuali</H3>")
+   document.write("<TABLE border=1>")
+   for(i=0;i<righe;i++)
+   {
+      document.write("<TR>")
+ 		 
+      for(j=0;j<colonne;j++)
+      {
+	  
+         numero = parseInt(Math.random() * (massimo - minimo + 1)) + minimo;
+         document.write("<TD bgcolor='yellow'>"+numero+"</TD>")
+	  }
+      document.write("</TR>")
+   }
+   document.write("</TABLE>")
+}
+</SCRIPT>
+
+<HTML>
+   <BODY>
+      <H3>Casuali</H3>
+         <FORM name='F1'>
+	        Righe:<INPUT type='text' name='RI' size='3'>
+	        Colonne:<INPUT type='text' name='CO' size='3'> 
+	        <BR>
+	        <INPUT type='submit' value='Invia' onClick='punti()'>
+	        <INPUT type='reset' value='Cancella'>
+	     </FORM>
+   </BODY>
+</HTML>
