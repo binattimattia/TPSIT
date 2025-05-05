@@ -21,10 +21,6 @@
 </head>
 <body>
     <h1>Generatore di Numeri Casuali</h1>
-    <label for="min">Min:</label>
-    <input type="number" id="min" value="1">
-    <label for="max">Max:</label>
-    <input type="number" id="max" value="100">
     <button onclick="setInterval(generaNumeri, 500)">Genera</button>
     <div id="output"></div>
    
@@ -33,16 +29,13 @@
         function generaNumeri() {
             let numeriCasuali = [];
             var ArrayNumeriCasuali = [];
-            const min = parseInt(document.getElementById('min').value, 10);
-            const max = parseInt(document.getElementById('max').value, 10);
-            if (isNaN(min) || isNaN(max) || min >= max) {
-                alert("Inserisci un intervallo valido.");
-                return;
-            }
+            const min = 0; // Range minimo impostato a 0
+            const max = 1; // Range massimo impostato a 1
            
             let numeri = "";
+            let arrayCasuale_i = [];
             for (let i = 0; i < 10000; i++) {
-                let numero = Math.floor(Math.random() * (max - min + 1)) + min;
+                let numero = Math.random() * (max - min) + min; // Genera un numero float tra 0 e 1
                 numeriCasuali.push(numero);
                 ArrayNumeriCasuali.push(numero);
                 // Calcola la media ogni 50 numeri
@@ -51,8 +44,13 @@
                     numeri += "\nMedia: " + mediaNumeri.toFixed(2);
                     numeriCasuali = []; // Resetto l'array in modo tale che quando ci saranno altri 50 numeri verrà eseguita la media
                 }
-                numeri += numero + " ";
+                numeri += numero.toFixed(2) + " "; // Mostra il numero con 4 cifre decimali
                 if (i % 50 === 49) numeri += "\n";
+            }
+            for (let i = 0; i < ArrayNumeriCasuali.length; i++) {
+                if (!i === 0) {
+                    arrayCasuale_i.push(ArrayNumeriCasuali[i]/ArrayNumeriCasuali[i - 1]);
+                }
             }
             document.getElementById('output').textContent = numeri;
         }
